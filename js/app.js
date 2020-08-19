@@ -13,7 +13,7 @@ cargarEventListeners();
 function cargarEventListeners() {
     //Dispara cuando se presiona "Agregar Carrito"
     cursos.addEventListener('click', comprarCurso);
-    
+
     //Cuando se elimina el curso del carrito
     carrito.addEventListener('click', eliminarCurso);
 
@@ -68,7 +68,7 @@ function insertarCarrito(curso) {
         </td>
         <td> ${curso.titulo} </td>
         <td> ${curso.precio} </td>
-        <td> 
+        <td>
             <a href="#" class="borrar-curso" data-id="${curso.id}"> X </a>
         </td>
     `;
@@ -125,7 +125,7 @@ function guardarCursoLocalStorage(curso) {
 //Comprueba que haya elementos en Local Storage
 function obtenerCursosLocalStorage() {
    let cursosLS;
-   
+
    //Comprobamos si hay algo en Local Storage
    if (localStorage.getItem('cursos') === null) {
        cursosLS = [];
@@ -152,11 +152,11 @@ function leerLocalStorage() {
             </td>
             <td> ${curso.titulo} </td>
             <td> ${curso.precio} </td>
-            <td> 
+            <td>
                 <a href="#" class="borrar-curso" data-id="${curso.id}"> X </a>
             </td>
         `;
-    listaCursos.appendChild(row); 
+    listaCursos.appendChild(row);
     });
 }
 
@@ -177,7 +177,7 @@ function eliminarCursoLocalStorage(curso) {
             cursosLS.splice(index, 1);
         }
     });
-    
+
     // console.log(cursosLS);
 
     //Agregamos el arreglo actual a Storage
